@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Room Designer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🏠 My Small Room Designer</h1>
+    <div class="main">
+        <!-- ================= LEFT PANEL ================= -->
+
+        <div class="tools furniture-tools">
+            <h2>Furniture</h2>
+        
+            <button onclick="addFurniture('sofa')">🛋️ Sofa</button>
+            <button onclick="addFurniture('bed')">🛏️ Bed</button>
+            <button onclick="addFurniture('chair')"> 🪑 Chair </button>
+            <button onclick="addFurniture('plant')">🪴 Plant </button>
+            <button onclick="addFurniture('frame')">🖼️ Frame</button>
+             <hr>
+
+                <button class="btn" onclick="resizeObject(1.1)">+</button>
+                <button class="btn" onclick="resizeObject(0.9)">-</button>
+                <button onclick="deleteObject()" class="del">🗑️ Delete</button>
+
+         </div>
+
+        <!-- ================= ROOM ================= -->
+        <div class="room" id="room">
+
+            <div class="wall" id="wall"></div>
+            <div class="floor" id="floor"></div>
+            <div class="window">
+
+                <div class="window-line"></div>
+            </div>
+
+            <div class="furniture" data-type="sofa" style="left: 80px; top: 170px;">
+                <div class="item-content">
+                    <svg viewBox="0 0 220 130" class="furniture-image">
+                        <rect x="25" y="45" width="170" height="65" rx="18" fill="#9b6b52" />
+                        <rect x="35" y="25" width="150" height="55" rx="18" fill="#b98568" />
+                        <rect x="15" y="55" width="35" height="60" rx="15" fill="#87583f" />
+                        <rect x="170" y="55" width="35" height="60" rx="15" fill="#87583f" />
+                        <rect x="40" y="82" width="140" height="12" rx="5" fill="#704733" />
+                        <rect x="45" y="105" width="12" height="18" fill="#543628" />
+                        <rect x="165" y="105" width="12" height="18" fill="#543628" />
+                    </svg>
+                </div>
+             </div>
+
+            <div class="furniture" data-type="plant" style="left: 580px; top: 150px;">
+                <div class="item-content">
+                    <svg viewBox="0 0 130 180" class="furniture-image">
+                        <rect x="45" y="60" width="40" height="75" rx="5" fill="#4c8c50" />
+                        <ellipse cx="65" cy="55" rx="28" ry="45" fill="#6fae63" />
+                        <ellipse cx="38" cy="75" rx="20" ry="40" fill="#5f9d5c" />
+                        <ellipse cx="92" cy="75" rx="20" ry="40" fill="#5f9d5c" />
+                        <path d="M65 55 L65 125" stroke="#3f713e" stroke-width="5" />
+                        <path d="M65 80 L40 60" stroke="#3f713e" stroke-width="4" />
+                        <path d="M65 90 L90 65" stroke="#3f713e" stroke-width="4" />
+                        <path d="M65 125 L40 150 L90 150 Z" fill="#b66c43" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+          <div class="tools room-tools">       
+            <h2>Room</h2>
+            <label>Wall Color</label>
+
+            <input type="color" id="wallColor" value="#ead7c0" onchange="changeWall()">
+            <label>Floor Color</label>
+
+            <input type="color" id="floorColor" value="#b98b61" onchange="changeFloor()">
+            <hr>
+
+            <button class="save" onclick="saveRoom()">💾 Save Room</button>
+            <button class="reset" onclick="resetRoom()">🔄 Reset Room</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
